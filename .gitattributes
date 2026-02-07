@@ -1,11 +1,18 @@
-* text=auto eol=lf
+# Auto-detect text files and perform LF normalization
+* text=auto
 
-*.blade.php diff=html
-*.css diff=css
-*.html diff=html
-*.md diff=markdown
-*.php diff=php
+# Force specific languages
+*.blade.php linguist-language=Blade
+*.php linguist-language=PHP
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript
+*.vue linguist-language=Vue
+*.css linguist-language=CSS
 
-/.github export-ignore
-CHANGELOG.md export-ignore
-.styleci.yml export-ignore
+# Ignore vendor and build artifacts from language stats
+public/adminlte/** linguist-vendored
+public/build/** linguist-vendored
+node_modules/** linguist-vendored
+vendor/** linguist-vendored
+*.min.js linguist-vendored
+*.min.css linguist-vendored
